@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = ['https://addis-music-lib.netlify.app/'];
+const allowedOrigins = ['https://addis-music-lib.netlify.app'];
 app.use(cors(
     {origin: function (origin, callback) {
         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
