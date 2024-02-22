@@ -11,14 +11,20 @@ export const DetailText = styled(Text)`
   color: aliceblue;
 `;
 
-export const StyledCard = styled(Card)<{ hasImageAbove?: boolean }>`
+export const StyledCard = styled(Card)`
   max-width: 100%;
+  z-index: -10;
   padding: 10px;
   margin-bottom: 20px;
   transition: transform 0.3s ease-in-out;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  background: linear-gradient(to bottom right,orangered, tan);
+
+
+  background-color: rgba(40, 37, 34, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+
+
 
   &:hover {
     transform: scale(1.05);
@@ -33,6 +39,7 @@ export const StyledCard = styled(Card)<{ hasImageAbove?: boolean }>`
 `;
 export const Title = styled(Heading)`
   font-size: 1.3em;
+  letter-spacing: 3px;
   margin-bottom: 10px;
   font-family: 'Roboto', sans-serif;
   color: mistyrose;

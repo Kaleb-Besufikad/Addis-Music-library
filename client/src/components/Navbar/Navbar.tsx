@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {Heading, Box} from 'rebass';
+import React, { useState } from 'react';
+import { Heading, Box } from 'rebass';
 import SongForm from "../Form/SongForm";
-import {FormContainer, StyledNavbar} from "./style";
+import { FormContainer, StyledNavbar } from "./style";
 import CustomButton from "../CustomButton/CustomButton";
 import StatsPage from "../StatsPage/StatsPage";
-import {InfoCircle} from '@emotion-icons/fa-solid/';
-import {Link} from "react-router-dom";
+import { InfoSquareFill } from '@emotion-icons/bootstrap';
+import { Link } from "react-router-dom";
 
 interface NavbarProps {
     isFormVisible: boolean,
@@ -24,45 +24,53 @@ const Navbar: React.FC<NavbarProps> = ({
                                        }: NavbarProps) => {
 
     const [displayStats, setDisplayStats] = useState(false);
+
     return (
         <><StyledNavbar alignItems="center" justifyContent="space-between">
-            <Heading fontSize={[3, 4]} fontWeight="bold" fontFamily='Roboto'>
-                <Link to="/" className='logo'>Addis Music Library</Link>
+            <Link to="/" className='logo'>
+                <Heading fontSize={[4, 5, 5]} fontWeight="bold" className='logo' fontFamily='Gluten'>
+                    Addis Music Library
+                </Heading>
+            </Link>
+            <Box alignItems="center" justifyContent='space-between'>
                 <Link to="/stats">
-                    <InfoCircle
-                    className="info-button"
-                    size={32}
-
-                    // onClick={() => {
-                    //             setDisplayStats(!displayStats)
-                    // }}
-                />
+                    <InfoSquareFill
+                        className="info-button"
+                        size={38}
+                        aria-label="Statistics"
+                    />
                 </Link>
-            </Heading>
-            <CustomButton variant="filled" onClick={toggleFormVisibility} sx={{
-                fontWeight: 'bold',
-                fontSize: '1.5em',
-                padding: '5px 15px !important',
-                margin: ' !important'
-            }}>{isFormVisible ? '×' : '+'}</CustomButton>
+                <CustomButton
+                    variant="filled"
+                    onClick={toggleFormVisibility}
+                    mx={[0, 1, 2]}
+                    sx={{
+                        fontWeight: 'bold',
+                        fontSize: '1.5em',
+                        padding: '5px 15px !important',
+                    }}
+                    aria-expanded={isFormVisible}
+                    aria-haspopup="true"
+                >
+                    {isFormVisible ? '×' : '+'}
+                </CustomButton>
+            </Box>
 
-            <FormContainer isVisible={isFormVisible}>
+        </StyledNavbar>
+            <FormContainer isVisible={isFormVisible} className='blurry-background'>
                 <Box sx={{
-                    backgroundColor: 'bisque', color: 'purple', borderRadius: '0.5em 0.5em 0 0', padding: '0.5em',
+                    borderRadius: '0.5em 0.5em 0 0', padding: '0.5em',
+                    zIndex: 1,
+                    backgroundColor: 'rgba(235, 230, 230, 0.1) !important',
+                    backdropFilter: 'blur(20px) !important'
                 }}>
-                    <Heading as="h3" sx={{fontFamily: 'Roboto', textAlign: 'center'}}>
+                    <Heading as="h3" sx={{fontFamily: 'Roboto', textAlign: 'center', color: 'aliceblue'}}>
                         {currentId ? 'Edit' : 'Add New'} Song
                     </Heading>
                 </Box>
 
                 <SongForm onSubmit={handleFormSubmit} currentId={currentId} setCurrentId={setCurrentId}/>
-            </FormContainer>
-        </StyledNavbar>
-            <Box display={displayStats ? 'flex' : 'none'}
-                 sx={{justifyContent: 'center', position: 'absolute', bottom: 0, width: '100%'}}>
-                <StatsPage/>
-            </Box>
-        </>
+            </FormContainer></>
     );
 };
 

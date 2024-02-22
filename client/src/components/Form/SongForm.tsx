@@ -70,7 +70,7 @@ const SongForm: React.FC<FormProps> = ({onSubmit, currentId, setCurrentId}) => {
         return `${durationInMinutes}:${durationSeconds < 10 ? `0${durationSeconds}` : durationSeconds}`;
     }
     return (
-        <Box pl={5} sx={{margin: '0.5em auto'}} pb={5}>
+        <Box pl={5} sx={{margin: '0.5em auto' ,zIndex: 100}} pb={5}>
             <form onSubmit={handleSubmit}>
                 <Input id="title" type="text" label="Song Title" value={songData.title} required
                        onChange={(e) => setSongData({...songData, title: e.target.value})}

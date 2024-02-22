@@ -3,6 +3,7 @@ import {useSelector} from "react-redux";
 import {Box, Card, Heading, Text} from 'rebass';
 import {Song} from '../types/songTypes';
 import SongCard from "./SongCard/SongCard";
+import Loading from "./Loading";
 
 
 interface SongListProps {
@@ -22,7 +23,7 @@ export const SongList: React.FC<SongListProps> = ({
     let songs = useSelector((state: { songs: Song[] }) => state.songs);
 
     return (
-        !songs.length ? <Text>No songs found</Text> :
+        !songs.length ? <Loading size={10}/>:
             <Box
                 sx={{
                     display: 'grid',

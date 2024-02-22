@@ -4,8 +4,8 @@ import {Box} from "rebass";
 
 export const StatDetail = styled(DetailText)`
   display: flex;
-  padding-inline: 2em;
-  margin-inline-end: 2em;
+  padding-inline: 1em;
+  margin-inline: 1em;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.29);
@@ -14,6 +14,7 @@ export const StatDetail = styled(DetailText)`
 `
 export const StatTitle = styled(Title)`
   display: flex;
+  letter-spacing: 2px;
   margin:auto 1em;
   padding-top: 0.5em;
 `
@@ -25,6 +26,7 @@ export const StatBox = styled(Box)`
 
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  background: linear-gradient(to bottom right, orangered, tan);
 
+  background-color: rgba(35, 30, 30, 0.6) ;
+  backdrop-filter: blur(20px) ;
 `

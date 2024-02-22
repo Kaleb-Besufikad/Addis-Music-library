@@ -21,7 +21,7 @@ export const StyledInput = styled.input<{ [key: string]: any }>`
   &:focus {
     //margin:3px auto;
     border: none;
-    border-bottom: 2px solid lightblue;
+    border-bottom: 2px solid navajowhite;
     box-shadow: none;
   }
 

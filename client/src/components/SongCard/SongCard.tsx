@@ -4,7 +4,7 @@ import {Song} from '../../types/songTypes';
 import {deleteSong} from "../../actions/songs";
 
 import {Edit, Trash2, Slash} from "@emotion-icons/evaicons-solid";
-import { Image, Flex, Box, Button} from 'rebass';
+import {Image, Flex, Box, Button} from 'rebass';
 import {Title, DetailText, StyledCard} from "./style";
 // @ts-ignore
 import musicImg from '../../assets/images/music-note.png';
@@ -12,6 +12,7 @@ import {useAppDispatch} from "../../hooks";
 
 
 import {Album} from '@emotion-icons/material-twotone'
+
 interface Props {
     song: Song,
     currentId: string,
@@ -32,12 +33,11 @@ const SongCard: React.FC<Props> = ({song, currentId, setCurrentId, isFormVisible
         toggleFormVisibility()
     }
     return (
-        <StyledCard hasImageAbove>
+        <StyledCard  >
             <Flex alignItems="right">
                 <Box
                     mr={2}
                     sx={{maxWidth: '30%'}}
-
                 >
                     <Image
                         src={musicImg}
@@ -51,17 +51,17 @@ const SongCard: React.FC<Props> = ({song, currentId, setCurrentId, isFormVisible
                 </Box>
                 <Box flex="1">
                     <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-                        <span style={{display: 'flex', alignItems: 'center'}}><Title as="h3">{song.title} </Title> <DetailText
-                            sx={{fontSize: '0.8em !important', marginLeft: '1em'}}>{durationText}</DetailText></span>
+                        <div style={{display: 'flex', alignItems: 'center'}}>
+                            <Title as="h3" sx={{fontFamily:'"Gluten", cursive !important'}}>
+                                {song.title}
+                            </Title>
+                            <DetailText sx={{fontSize: '0.8em !important', marginLeft: '1em'}}>
+                                {durationText}
+                            </DetailText>
+                        </div>
 
                         <div>
-                            <Button backgroundColor='transparent' color='white' sx={{
-                                ":disabled": {backgroundColor: 'rgba(255, 255, 255, 0.1)'},
-                                ":hover": {backgroundColor: 'rgba(255, 255, 255, 0.4)'},
-                                ":active": {backgroundColor: 'rgba(255, 255, 255, 0.6)'},
-                                backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                                marginLeft: '3px',
-                            }}
+                            <Button backgroundColor='transparent' color='white' className='edit-button'
                                     onClick={() => handleEdit()}
                                     disabled={isFormVisible && currentId !== ""}
                             >
@@ -90,7 +90,7 @@ const SongCard: React.FC<Props> = ({song, currentId, setCurrentId, isFormVisible
                     </DetailText>
                     <DetailText> <Album size='1em' title='Album' style={{marginRight: '6px'}}/>{song.album}</DetailText>
                     <DetailText>{song.genre.map((item) => (
-                        <Box key={item} as={'span'} sx={{ fontSize: '0.8em',backgroundColor: 'rgba(255, 255, 255, 0.3)',marginInline: '3px', paddingInline: '5px',borderRadius: '5px', marginBottom:"5px !important"}}>
+                        <Box key={item} as={'p'} className="disable-ellipsis tag" >
                             {item}
                         </Box>
                     ))}</DetailText>
