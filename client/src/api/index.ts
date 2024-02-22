@@ -1,7 +1,7 @@
 import axios, {AxiosResponse} from 'axios';
 import {Song} from "../types/songTypes";
 
-axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.baseURL = 'https://addis-music-library.onrender.com';
 const url = "songs/";
 
 export const getSongList = async () => await axios.get(url);
