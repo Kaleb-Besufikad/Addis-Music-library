@@ -1,0 +1,47 @@
+version: "2.24"
+
+services:
+  web:
+    depends_on:
+      - api
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    develop:
+      watch:
+        - path: ./frontend/package.json
+          action: rebuild
+        - path: ./frontend/yarn.lock
+          action: rebuild
+        - path: ./frontend
+          target: /app
+          action: sync
+
+  api:
+    depends_on:
+      - db
+    build: backend
+    ports:
+      - "8080:8080"
+    environment:
+      MONGODB_URL: mongodb://db/songs
+
+    develop:
+      watch:
+        - path: ./backend/package.json
+          action: rebuild
+        - path: ./backend/yarn.lock
+          action: rebuild
+
+        - path: ./backend
+          target: /app
+          action: sync
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - songs:/data/db
+
+volumes:
+  songs:

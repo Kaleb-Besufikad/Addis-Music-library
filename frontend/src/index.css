@@ -1,0 +1,164 @@
+/* index.css */
+
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #44413A;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(240)'%3E%3Cstop offset='0' stop-color='%2344413A'/%3E%3Cstop offset='1' stop-color='%2315504B'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+ul {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+h3 {
+
+}
+
+.info-button {
+    color: darkslategray;
+    background: radial-gradient(rgba(255, 255, 255), darkslategrey);
+    width: 37.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: -0.4em;
+    margin-inline: 0.5em;
+    border-radius: 0.3em;
+    box-shadow: -1px 4px 6px rgba(139, 103, 61, 0.7);
+
+}
+
+.info-button:active {
+    color: rgba(47, 79, 79, 0.93);
+    background: radial-gradient(rgba(255, 255, 255), darkslategrey);
+
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.info-button:hover {
+    background: radial-gradient(rgba(255, 255, 255), darkslategrey);
+    color: #8b673d;
+
+}
+
+.logo {
+    line-height: 100%;
+    min-height: 100%;
+    height: 100%;
+    color: salmon;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: darksalmon;
+    backdrop-filter: blur(4px);
+}
+
+.logo:visited {
+    color: #ff6600;
+}
+
+.blurry-background {
+    z-index: -1;
+    background-color: rgba(51, 48, 48, 0.67) !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+.separator{
+    background-color: rgba(233, 150, 122, 0.42);
+}
+
+.blurry-background::before {
+    background-color: rgba(51, 36, 36, 0.84) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.clear-button{
+    margin-right: 0.5em;
+}
+.clear-button:hover{
+    color: rgba(255, 255, 255, 0.69);
+}
+.clear-button:active{
+    color: rgba(220, 194, 194, 0.69);
+}
+.edit-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.2em !important;
+
+}
+.edit-button:disabled {background-color : rgba(255, 255, 255, 0.1)}
+.edit-button:hover {background-color: rgba(255, 255, 255, 0.4)}
+.edit-button:active{background-color: rgba(255, 255, 255, 0.6)}
+
+
+.delete-button{
+
+    background-color: rgba(255,0,0, 0.2);
+    margin: 0.2em !important;
+
+}
+.delete-button:hover {background-color: rgba(255,0,0,0.4)}
+.delete-button:disabled {background-color: rgba(255,0,0, 0.1)}
+.delete-button:active {background-color: rgba(255,0,0, 0.6)}
+
+
+.disable-ellipsis {
+    white-space: initial !important;
+    overflow: initial !important;
+    text-overflow: initial !important;
+}
+
+.tag {
+    font-size: 0.8em;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-inline: 3px !important;
+    float: left;
+    padding-inline: 5px!important;
+    border-radius: 5px;
+    margin-bottom: 5px !important
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.song-title {
+    background-color: darkolivegreen;
+    color: whitesmoke;
+}
+
