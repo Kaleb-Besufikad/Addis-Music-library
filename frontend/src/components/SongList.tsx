@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
-import {Box, Card, Heading, Text, Button, Flex} from 'rebass';
+import {Box, Button, Flex} from 'rebass';
 import {Song} from '../types/songTypes';
 import SongCard from "./SongCard/SongCard";
 import Loading from "./Loading";
-import CustomButton from "./CustomButton/CustomButton";
 import Input from "./Input/Input";
 import {Stats} from "../types/statisticsTypes";
 import {DetailText} from "./SongCard/style";

@@ -3,7 +3,6 @@ import { Heading, Box } from 'rebass';
 import SongForm from "../Form/SongForm";
 import { FormContainer, StyledNavbar } from "./style";
 import CustomButton from "../CustomButton/CustomButton";
-import StatsPage from "../StatsPage/StatsPage";
 import { InfoSquareFill } from '@emotion-icons/bootstrap';
 import { Link } from "react-router-dom";
 
@@ -23,7 +22,6 @@ const Navbar: React.FC<NavbarProps> = ({
                                            toggleFormVisibility
                                        }: NavbarProps) => {
 
-    const [displayStats, setDisplayStats] = useState(false);
 
     return (
         <>

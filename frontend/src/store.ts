@@ -1,7 +1,5 @@
 
-import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import reducer  from './reducers';
-import thunkMiddleware from 'redux-thunk';
 import {configureStore} from "@reduxjs/toolkit";
 
 const store = configureStore(

@@ -1,12 +1,10 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
 import {Song} from '../../types/songTypes';
 import {deleteSong} from "../../actions/songs";
 
 import {Edit, Trash2, Slash} from "@emotion-icons/evaicons-solid";
 import {Image, Flex, Box, Button} from 'rebass';
 import {Title, DetailText, StyledCard} from "./style";
-// @ts-ignore
 import musicImg from '../../assets/images/music-note.png';
 import {useAppDispatch} from "../../hooks";
 

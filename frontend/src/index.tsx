@@ -8,7 +8,6 @@ import {Provider} from "react-redux";
 import store from "./store";
 import App from './App';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import StatsPage from "./components/StatsPage/StatsPage";
 import PageNotFound from "./components/pageNotFound";
 
 

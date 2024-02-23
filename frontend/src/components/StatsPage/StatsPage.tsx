@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../hooks";
 import {fetchStatistics} from "../../actions/statstics";
-import {Text} from "rebass";
 import {Title} from "../SongCard/style";
 import {Stats as StatsType} from '../../types/statisticsTypes';
 import {StatBox, StatDetail, StatTitle} from "./style";

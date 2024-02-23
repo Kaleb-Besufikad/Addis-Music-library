@@ -4,7 +4,7 @@ import { Box } from 'rebass';
 import Navbar from "./components/Navbar/Navbar";
 import { SongList } from "./components/SongList";
 import { useAppDispatch } from "./hooks";
-import { Outlet, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import StatsPage from "./components/StatsPage/StatsPage";
 import {fetchStatistics} from "./actions/statstics";
 import {useSelector} from "react-redux";

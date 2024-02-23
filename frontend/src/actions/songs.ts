@@ -1,7 +1,7 @@
 import {Dispatch} from "@reduxjs/toolkit";
 import * as api from "../api";
 import {AddSongAction, DeleteSongAction, GetSongsAction, Song, UpdateSongAction} from "../types/songTypes";
-import {GET_SONGS, ADD_SONG, UPDATE_SONG, DELETE_SONG, SongActionTypes} from '../types/songTypes';
+import {GET_SONGS, ADD_SONG, UPDATE_SONG, DELETE_SONG} from '../types/songTypes';
 
 export const getSongList = (filters?: any) => async (dispatch: Dispatch<GetSongsAction>) => {
     try {
