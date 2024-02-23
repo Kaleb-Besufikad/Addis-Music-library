@@ -8,7 +8,7 @@ import CustomButton from "./CustomButton/CustomButton";
 import Input from "./Input/Input";
 import {Stats} from "../types/statisticsTypes";
 import {DetailText} from "./SongCard/style";
-import {CancelPresentation} from '@emotion-icons/material-twotone';
+import {CancelPresentation, FilterAlt} from '@emotion-icons/material-twotone';
 
 interface SongListProps {
     currentId: string,
@@ -80,7 +80,7 @@ export const SongList: React.FC<SongListProps> = ({
                     ))}
                 </Flex>}
             </Box>
-                <CustomButton onClick={handleFilterButtonClick}>{filterVisible ? 'Hide Filters' : 'Filter'}</CustomButton>
+                <Button onClick={handleFilterButtonClick}  className='edit-button'>{filterVisible ? 'Hide Filters' : 'Filter' }&nbsp;<FilterAlt size={20}/></Button>
             {!songs.length ? <Loading size={10}/> :
 
                 <Box
