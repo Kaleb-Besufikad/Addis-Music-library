@@ -13,9 +13,10 @@ const Input: React.FC<InputProps> = ({ id, label, type, ...rest }) => {
     const inputProps = type === "radio" ? { type: "radio", ...rest } : rest;
 
     return (
-        <StyledInputWrapper>
-            <Text as='label' htmlFor={id} sx={{ color: 'antiquewhite', fontSize: '0.8em' }}>{label} &nbsp;
+        <StyledInputWrapper style={{ display: 'flex', alignItems: 'center', paddingRight:'0.5em' }}>
+            <Text as='label' htmlFor={id} sx={{ color: 'antiquewhite', fontSize: '0.8em' , marginInline: type==='radio'?'0':'0.5em', marginBlock: type==='radio'?'-0.5em':'0'}}>
                 <InputComponent id={id} {...inputProps} />
+                {label}
             </Text>
         </StyledInputWrapper>
     );

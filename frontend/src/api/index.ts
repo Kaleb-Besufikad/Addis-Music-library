@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {Song} from "../types/songTypes";
 
-axios.defaults.baseURL = process.env.API_URL||'http://localhost:8080';
+axios.defaults.baseURL = process.env.API_URL||'https://addis-music-library.onrender.com';
 const url = "songs/";
 
 export const getSongList = async (filters?: any) => await axios.get(url,{params: filters});

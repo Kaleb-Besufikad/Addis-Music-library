@@ -42,7 +42,7 @@ const StatsPage = () => {
                            backgroundColor: 'rgba(83,83,83,0.7)',
                        }}>Statistics</Title>
 
-                <StatBox width={['100%', '47%', '20%']}
+                <StatBox width={['100%', '47%', '23%']}
                          sx={{height: '100% !important', paddingBottom: '1em !important'}}>
                     <StatTitle color='#fff' style={{marginBottom: '0.8em'}}>Overall</StatTitle>
 
@@ -64,19 +64,8 @@ const StatsPage = () => {
                     </StatDetail>
                 </StatBox>
 
-                <StatBox width={['100%', '47%', '24%']}>
-                    <StatTitle color='#fff'>Genres</StatTitle>{
-                    <ul>
-                        {statistics.songsPerGenre ? sortedSongsPerGenre.map((genre: any) => (
-                            <li key={genre._id} style={{color: '#fff', listStyle: 'none'}}>
-                                <StatDetail>
-                                    <span>{genre._id}</span><span>{genre.count}</span>
-                                </StatDetail>
-                            </li>
-                        )) : <Loading size={1}/>}
-                    </ul>}
-                </StatBox>
-                <StatBox width={['100%', '47%', '23%']}>
+
+                <StatBox width={['100%', '47%', '47%']}>
                     <StatTitle color='#fff'>Artists</StatTitle>
                     <ul>
                         {statistics.songsPerArtist ? sortedSongsPerArtist.map((artist: any) => (
@@ -87,6 +76,18 @@ const StatsPage = () => {
                             </li>
                         )) : <Loading size={1}/>}
                     </ul>
+                </StatBox>
+                <StatBox width={['100%', '47%', '47%']}>
+                    <StatTitle color='#fff'>Genres</StatTitle>{
+                    <ul>
+                        {statistics.songsPerGenre ? sortedSongsPerGenre.map((genre: any) => (
+                            <li key={genre._id} style={{color: '#fff', listStyle: 'none'}}>
+                                <StatDetail>
+                                    <span>{genre._id}</span><span>{genre.count}</span>
+                                </StatDetail>
+                            </li>
+                        )) : <Loading size={1}/>}
+                    </ul>}
                 </StatBox>
                 <StatBox width={['100%', '47%', '23%']}>
                     <StatTitle>Albums</StatTitle>

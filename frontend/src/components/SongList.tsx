@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {Box, Button, Flex} from 'rebass';
 import {Song} from '../types/songTypes';
@@ -8,6 +8,8 @@ import Input from "./Input/Input";
 import {Stats} from "../types/statisticsTypes";
 import {DetailText} from "./SongCard/style";
 import {CancelPresentation, FilterAlt} from '@emotion-icons/material-twotone';
+import {useAppDispatch} from "../hooks";
+import {getSongList} from "../actions/songs";
 
 interface SongListProps {
     currentId: string,
@@ -31,7 +33,7 @@ export const SongList: React.FC<SongListProps> = ({
                                                       statistics
                                                   }) => {
     const songs = useSelector((state: { songs: Song[] }) => state.songs);
-
+    const dispatch = useAppDispatch();
     const [filterVisible, setFilterVisible] = useState(false);
 
     const handleFilterButtonClick = () => {
@@ -43,43 +45,73 @@ export const SongList: React.FC<SongListProps> = ({
         setFilterVisible(!filterVisible);
 
     };
+    useEffect(() => {
+        dispatch(getSongList());
+        setFilterVisible(false);
+    }, [currentId, isFormVisible, ]);
+
 
     return (
         <Box>
-            <Box className='blurry-background' sx={{display: filterVisible ? 'block' : 'none', borderRadius: '5px', padding: '0.5em'}}>
-                {statistics.totalGenres && <Flex sx={{borderBottom: '1px solid rgba(255, 255, 255, 0.29)'}}>
-                    <CancelPresentation color='white' size={32} className='clear-button '
-                                        onClick={(e) => handleGenreFilter('')}/>
-                    <DetailText mt={2} mr={4}>Genres</DetailText>
-                    {statistics.totalGenres.map(genre => (
-                        <Input key={genre} name="genre" value={genre} id={genre} label={genre} type='radio'
-                               onChange={(e) => handleGenreFilter(e.target.value)}
-                        />
-                    ))}
-                </Flex>}
-                {statistics.totalArtists && <Flex sx={{borderBottom: '1px solid rgba(255, 255, 255, 0.29)'}}>
-                    <CancelPresentation color='white' size={32} className='clear-button '
-                                        onClick={(e) => handleArtistFilter('')}/>
-                    <DetailText mt={2} mr={4}>Artists</DetailText>
-                    {statistics.totalArtists.map(artist => (
-                        <Input key={artist} name="artist" value={artist} id={artist} label={artist} type='radio'
-                               onChange={(e) => handleArtistFilter(e.target.value)}
-                        />
-                    ))}
-                </Flex>}
+            <Box className='blurry-background'
+                 sx={{display: filterVisible ? 'block' : 'none', borderRadius: '5px', padding: '0.5em'}}>
+                {statistics.totalGenres &&
+                    <Flex sx={{flexDirection: 'column', borderBottom: '1px solid rgba(255, 255, 255, 0.29)'}}>
+                        <Flex>
+                            <CancelPresentation color='white' size={32} className='clear-button '
+                                                onClick={(e) => handleGenreFilter('')}/>
+                            <DetailText className='disable-ellipsis' mt={2} mr={4}>Genres</DetailText>
+                        </Flex>
+                        <Flex sx={{flexWrap: 'wrap'}}>
+                            {statistics.totalGenres.map(genre => (
+                                <Box  key={genre} as='span' sx={{margin: '0.3em', borderRadius: '5px' , backgroundColor: 'rgba(171,171,171,0.29)'}}>
+                                    <Input name="genre" value={genre} id={genre} label={genre} type='radio'
+                                           onChange={(e) => handleGenreFilter(e.target.value)}
+                                    />
+                                </Box>
+                            ))}
+                        </Flex>
+                    </Flex>}
+                {statistics.totalArtists &&
+                    <Flex sx={{borderBottom: '1px solid rgba(255, 255, 255, 0.29)', flexDirection: 'column',}}>
+                        <Flex>
+                            <CancelPresentation color='white' size={32} className='clear-button '
+                                                onClick={(e) => handleArtistFilter('')}/>
+                            <DetailText className='disable-ellipsis' mt={2} mr={4}>Artists</DetailText>
+                        </Flex>
+                        <Flex sx={{flexWrap: 'wrap'}}>
+                            {statistics.totalArtists.map(artist => (
+                                <Box key={artist} as='span' sx={{margin: '0.3em', borderRadius: '5px' , backgroundColor: 'rgba(171,171,171,0.29)'}}>
 
-                {statistics.totalAlbums && <Flex>
-                    <CancelPresentation color='white' size={32} className='clear-button '
-                                        onClick={(e) => handleAlbumFilter('')}/>
-                    <DetailText mt={2} mr={4}>Albums</DetailText>
-                    {statistics.totalAlbums.map(album => (
-                        <Input key={album} name="album" value={album} id={album} label={album} type='radio'
-                               onChange={(e) => handleAlbumFilter(e.target.value)}
-                        />
-                    ))}
-                </Flex>}
+                                <Input  name="artist" value={artist} id={artist} label={artist} type='radio'
+                                       onChange={(e) => handleArtistFilter(e.target.value)}
+                                /></Box>
+                            ))}
+                        </Flex>
+                    </Flex>}
+
+                {statistics.totalAlbums &&
+                    <Flex sx={{flexDirection: 'column',}}>
+                        <Flex>
+                            <CancelPresentation color='white' size={32} className='clear-button '
+                                                onClick={(e) => handleAlbumFilter('')}/>
+                            <DetailText className='disable-ellipsis' mt={2} mr={4}>Albums</DetailText>
+                        </Flex>
+                        <Flex sx={{flexWrap: 'wrap'}}>
+
+                            {statistics.totalAlbums.map(album => (
+                                <Box  key={album} as='span' sx={{margin: '0.3em', borderRadius: '5px' , backgroundColor: 'rgba(171,171,171,0.29)'}}>
+
+                                <Input name="album" value={album} id={album} label={album} type='radio'
+                                       onChange={(e) => handleAlbumFilter(e.target.value)}
+                                /></Box>
+                            ))}
+                        </Flex>
+                    </Flex>}
             </Box>
-                <Button onClick={handleFilterButtonClick}  className='edit-button'>{filterVisible ? 'Hide Filters' : 'Filter' }&nbsp;<FilterAlt size={20}/></Button>
+            <Button onClick={handleFilterButtonClick}
+                    className='edit-button'>{filterVisible ? 'Hide Filters' : 'Filter'}&nbsp;<FilterAlt
+                size={20}/></Button>
             {!songs.length ? <Loading size={10}/> :
 
                 <Box

@@ -84,6 +84,7 @@ h3 {
 
 .clear-button{
     margin-right: 0.5em;
+    min-width: 2em;
 }
 .clear-button:hover{
     color: rgba(255, 255, 255, 0.69);
@@ -113,14 +114,14 @@ h3 {
 
 
 .disable-ellipsis {
-    white-space: initial !important;
-    overflow: initial !important;
-    text-overflow: initial !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
 }
 
 .tag {
     font-size: 0.8em;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(149, 149, 149, 0.3);
     margin-inline: 3px !important;
     float: left;
     padding-inline: 5px!important;
