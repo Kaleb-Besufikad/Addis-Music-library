@@ -57,6 +57,7 @@ const SongForm: React.FC<FormProps> = ({onSubmit, currentId, setCurrentId}) => {
 
         if (currentId !== '') {
             dispatch(updateSong(songData._id, songData));
+
         }else {
             dispatch(addSong(songData));
         }

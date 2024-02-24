@@ -22,11 +22,22 @@ function App() {
     const [selectedAlbum, setSelectedAlbum] = useState<string>('');
     const params = useParams();
 
-
-    useEffect(() => {
+    const updateData= () => {
         dispatch(getSongList({ genre: selectedGenre, artist: selectedArtist, album: selectedAlbum }));
-        dispatch(fetchStatistics())
-    }, [dispatch, currentId, params, selectedGenre, selectedArtist, selectedAlbum]);
+        dispatch(fetchStatistics());
+    }
+    useEffect(() => {
+        updateData()
+        if (!isFormVisible) {
+            updateData()
+        }
+
+        // keep the data upto date
+        const interval = setInterval(() => {
+        updateData()
+        }, 10000);
+        return () => clearInterval(interval);
+    }, [dispatch, currentId, params, selectedGenre, selectedArtist, selectedAlbum, isFormVisible]);
 
     const toggleFormVisibility = () => {
         setIsFormVisible(!isFormVisible);

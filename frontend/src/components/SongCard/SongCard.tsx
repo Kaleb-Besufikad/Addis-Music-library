@@ -20,7 +20,6 @@ interface Props {
 }
 
 const SongCard: React.FC<Props> = ({song, currentId, setCurrentId, isFormVisible, toggleFormVisibility}) => {
-    // Convert duration from seconds to minutes
     const durationInMinutes = Math.floor(song.duration / 60);
     const durationSeconds = song.duration % 60;
     const durationText = `${durationInMinutes}:${durationSeconds < 10 ? `0${durationSeconds}` : durationSeconds}`;
