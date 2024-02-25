@@ -41,7 +41,6 @@ export const deleteSong = async (req, res) => {
 
 export const getAllSongs = async (req, res) => {
     const { artist, album, genre} = req.query;
-    console.log({ artist, album, genre})
 
     const query = {};
 
